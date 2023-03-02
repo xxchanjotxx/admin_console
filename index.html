@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- META -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>E-Library</title>
+    <meta charset="utf-8" />
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/7.14.1-0/firebase.js"></script> -->
+
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+
+    <!-- CSS -->
+    <link rel="stylesheet" media="screen" href="style.css" />
+  </head>
+
+  <body>
+    <h1>E-Library Admin Console</h1>
+    <div class="form" id="books_form">
+      <form id="form">
+        <div class="flex_container">
+          <div class="form-group">
+            <span class="info">Title</span>
+            <input
+              type="text"
+              name="title"
+              id="title"
+              class="form-control"
+              required
+              placeholder="Enter book title"
+            />
+          </div>
+          <div class="form-group">
+            <span class="info">Author</span>
+            <input
+              type="text"
+              name="author"
+              id="author"
+              class="form-control"
+              required
+              placeholder="Enter author name"
+            />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <span class="info">ISBN</span>
+          <input
+            type="number"
+            name="isbn"
+            id="isbn"
+            class="form-control"
+            required
+            placeholder="Enter ISBN number"
+            min="1"
+          />
+        </div>
+        <div class="form-group">
+          <span class="info"> Category </span>
+          <input
+            type="text"
+            name="category"
+            id="category"
+            class="form-control"
+            required
+            placeholder="Enter category"
+          />
+        </div>
+
+        <div class="form-group">
+          <span class="info"> No. of copies </span>
+          <input
+            type="number"
+            name="copies"
+            id="copies"
+            class="form-control"
+            required
+            placeholder="Enter the number of copies"
+            min="1"
+            max="10"
+          />
+        </div>
+
+        <div class="form-group">
+          <input
+            type="submit"
+            name="submit"
+            class="btnSubmit btn-block button"
+            id="submit_button"
+            value="Submit"
+          />
+        </div>
+      </form>
+    </div>
+    <script type="module">
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-app.js";
+
+      // If you enabled Analytics in your project, add the Firebase SDK for Google Analytics
+
+      // Add Firebase products that you want to use
+      import { getFirestore } from "https://www.gstatic.com/firebasejs/9.17.1/firebase-firestore.js";
+    </script>
+
+    <script src="script.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/5.5.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/5.5.2/firebase-firestore.js"></script>
+
+    <script>
+      const firebaseConfig = {
+        apiKey: "AIzaSyCQBVg_9GlyRck5glThLNduXJxPfBLneBo",
+        authDomain: "authenticator-app-10a82.firebaseapp.com",
+        databaseURL:
+          "https://authenticator-app-10a82-default-rtdb.asia-southeast1.firebasedatabase.app",
+        projectId: "authenticator-app-10a82",
+        storageBucket: "authenticator-app-10a82.appspot.com",
+        messagingSenderId: "1042020058328",
+        appId: "1:1042020058328:web:e0d67bcf898b05538783ad",
+        measurementId: "G-T9K6HN07J2",
+      };
+
+      firebase.initializeApp(firebaseConfig);
+      const db = firebase.firestore();
+    </script>
+  </body>
+</html>
